@@ -65,8 +65,9 @@ function HomePage() {
                     </NavLink>
                 </div>
             </div>
-            <h2 style={{paddingTop:'250px'}}>Welcome to Play-Along Jeopardy</h2>
+            
             </div>
+            <h2 style={{paddingTop:'250px'}}>Welcome to Play-Along Jeopardy</h2>
         </div>
         
         </div>
