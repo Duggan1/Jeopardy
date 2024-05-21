@@ -1,15 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter , Route,Routes, Switch } from 'react-router-dom';
 
 import Game from './Jeopardy';
+import HomePage from './homePage';
+
 function App() {
   return (<>
     <BrowserRouter>
     {/* <Header />  */}
     <Routes>
 
-    <Route path="/" element={<Game/>} />
+    <Route path="/jeopardy" element={<Game/>} />
+    <Route path="/" element={<HomePage/>} />
     
 
 

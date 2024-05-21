@@ -3,8 +3,8 @@ import JEOPPARDLOGO from './giphy.gif'
 
 function Game() {
     const [players, setPlayers] = useState([
-        { id: 1, name: "Tom", color: "blue", score: 0 },
-        { id: 2, name: "Kev", color: "purple", score: 0 }
+        { id: 1, name: "Player 1", color: "blue", score: 0 },
+        { id: 2, name: "Player 2", color: "purple", score: 0 }
     ]);
     const [playerName, setPlayerName] = useState('');
     const [playerColor, setPlayerColor] = useState('gray'); // Default player color
