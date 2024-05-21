@@ -4,6 +4,7 @@ import { BrowserRouter , Route,Routes, Switch } from 'react-router-dom';
 
 import Game from './Jeopardy';
 import HomePage from './homePage';
+import Mobile from './Mobile';
 
 function App() {
   return (<>
@@ -11,8 +12,9 @@ function App() {
     {/* <Header />  */}
     <Routes>
 
-    <Route path="/" element={<Game/>} />
-    <Route path="/jeopardy" element={<HomePage/>} />
+    <Route path="/jeopardy" element={<Game/>} />
+    <Route path="/mobileJeopardy" element={<Mobile/>} />
+    <Route path="/" element={<HomePage/>} />
     
 
 

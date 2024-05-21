@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import JEOPPARDLOGO from './giphy.gif'
+import JEOPPARDLOGO from './jeoLogo.webp';
 
 function Game() {
     const [players, setPlayers] = useState([
@@ -163,7 +163,7 @@ function Game() {
 
     return (
         <div style={{ width: '100%',backgroundColor:'black',maxWidth:'100%' }}>
-            <center><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
+            <center><img src={JEOPPARDLOGO} alt='' style={{height:'200px', border:'2px solid blue', borderRadius:'40%', marginBottom:'5%',width:'50%'}} ></img></center>
         
 
         <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px',flexWrap: 'wrap' }}>
@@ -191,7 +191,9 @@ function Game() {
             
             
             <h4 style={{color:'white'}}>Add More Players</h4>
-                <div style={{backgroundColor:'navy', borderRadius:'10%',border:'gold 2px solid',width:'75%' }}>
+                <div style={{backgroundColor:'navy', borderRadius:'10%',
+                border:`${playerColor} solid 4px`,
+                width:'75%' }}>
                 <center style={{display:'flex',alignItems: 'center', justifyContent: 'center', marginRight: '10px',padding:'1%',margin:'1%' }}>
                     <h2
                     type="text"
