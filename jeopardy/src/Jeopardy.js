@@ -3,8 +3,8 @@ import JEOPPARDLOGO from './giphy.gif'
 
 function Game() {
     const [players, setPlayers] = useState([
-        { id: 1, name: "Player 1", color: "blue", score: 0 },
-        { id: 2, name: "Player 2", color: "purple", score: 0 }
+        { id: 1, name: "Tom", color: "blue", score: 0 },
+        { id: 2, name: "Kev", color: "purple", score: 0 }
     ]);
     const [playerName, setPlayerName] = useState('');
     const [playerColor, setPlayerColor] = useState('gray'); // Default player color
@@ -12,11 +12,11 @@ function Game() {
   // 0 for first round, 1 for double Jeopardy
 
     const boards = [
-        [100, 200, 300, 400, 500].map(amount => ({
+        [200, 400, 600, 800, 1000].map(amount => ({
             amount,
             slots: Array(6).fill(null)
         })),
-        [200, 400, 600, 800, 1000].map(amount => ({
+        [400, 800, 1200, 1600, 2000].map(amount => ({
             amount,
             slots: Array(6).fill(null)
         }))
@@ -82,16 +82,22 @@ function Game() {
                     padding: '10px', color:'white',
                     border: `10px solid ${player.color}`, // Conditional green border
                     minWidth: '150px',
-                    backgroundColor: 'navy'
+                    backgroundColor: 'navy',
+                    width:'30%'
                 }}
             >
-                <p style={{ color: 'white', 
-                backgroundColor: 
+                <h2 style={{ 
+                    // color: 'white', 
+                // backgroundColor: 
+                                // border:'5px solid black',
+                                 color: 
                                      player.score < 0 ? 'darkred': 
-                                        highestScore == 0 ? 'navy':
+                                        highestScore == 0 ? 'white':
                                         player.score === highestScore ? 'green' :
-                                         'navy' }}>${player.score}</p>
-                <h3>{player.name}</h3>
+                                         'white' }}>${player.score}</h2>
+                <h3 style={{ 
+                                // border:'5px solid black',
+                                }}>{player.name}</h3>
                 
             </div>
         );
