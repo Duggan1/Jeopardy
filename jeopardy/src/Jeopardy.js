@@ -123,7 +123,7 @@ function Game() {
                     flex: 1,
                     padding: '20px 0',
                     margin: '5px',
-                    border: '1px solid white',
+                    border: '1px solid #080f44',
                     color: 'gold',
                     cursor: 'pointer',
                     backgroundColor: backgroundColor || 'inherit',
@@ -164,13 +164,14 @@ function Game() {
     return (
         <div style={{ width: '100%',backgroundColor:'black',maxWidth:'100%' }}>
             <center><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
-        <h1 style={{ textAlign: 'center' }}>Play along Jeopardy</h1>
+        
 
         <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px',flexWrap: 'wrap' }}>
             {players.map(player => <Player key={player.id} player={player} />)}
         </div>
+        <h1 style={{ textAlign: 'center' }}>Play along Jeopardy</h1>
         {moneyValues.map((value, rowIndex) => (
-            <div key={rowIndex} style={{ display: 'flex', width: '95%', justifyContent: 'space-evenly' }}>
+            <div key={rowIndex} style={{ display: 'flex', width: '95%', justifyContent: 'space-evenly'}}>
                 {value.slots.map((_, colIndex) => (
                     <MoneyValue key={`${rowIndex}-${colIndex}`} value={value} row={rowIndex} col={colIndex} />
                 ))}
@@ -184,10 +185,10 @@ function Game() {
                 backgroundColor: 'navy', color: currentBoard == 1 ? 'gold' : 'white', textDecoration: currentBoard == 1 ? 'underline':'' }}>Second Round</button>
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '200px', }}>
+        <div style={{ textAlign: 'center', marginTop: '200px',paddingBottom: '100px', }}>
             <center >
-            <div style={{backgroundColor:'#080f44',border: '5px solid gold' ,width:'75%',paddingBottom:'5%' }}>
-            <center ><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
+            <div style={{backgroundColor:'#080f44',border: '5px solid gold' ,width:'75%',paddingBottom:'0%',paddingTop:'5%' }}>
+            
             
             <h4 style={{color:'white'}}>Add More Players</h4>
                 <div style={{backgroundColor:'navy', borderRadius:'10%',border:'gold 2px solid',width:'75%' }}>
@@ -223,6 +224,8 @@ function Game() {
   }}
         onClick={addPlayer}>Add Player</button>
         </div>
+
+        <center ><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
         </div>
         </center>
             </div>
