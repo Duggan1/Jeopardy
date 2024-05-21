@@ -3,7 +3,7 @@ import JEOPPARDLOGO from './jeoLogo.webp';
 
 function Mobile() {
     const [players, setPlayers] = useState([
-        { id: 1, name: "Player 1", color: "blue", score: 0 },
+        { id: 1, name: "Player 1", color: "lightblue", score: 0 },
         { id: 2, name: "Player 2", color: "purple", score: 0 }
     ]);
     const [playerName, setPlayerName] = useState('');
