@@ -11,8 +11,8 @@ function App() {
     {/* <Header />  */}
     <Routes>
 
-    <Route path="/jeopardy" element={<Game/>} />
-    <Route path="/" element={<HomePage/>} />
+    <Route path="/" element={<Game/>} />
+    <Route path="/jeopardy" element={<HomePage/>} />
     
 
 
