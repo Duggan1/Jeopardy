@@ -24,7 +24,7 @@ function Game() {
     const addPlayer = () => {
         const newPlayer = {
             id: players.length + 1,  // Simple ID assignment, might need more sophisticated method in a real app
-            name: playerName,
+            name: `Player ${players.length + 1}`,
             color: playerColor,
             score: 0
         };
@@ -119,12 +119,23 @@ function Game() {
             <div 
                 draggable={!playerID}
                 onDragStart={(e) => handleDragStart(e, false)} 
-                style={{ flex: 1,
-                     padding: ' 20px 0',
-                      margin: '5px', 
-                      border: '1px solid',
-                       cursor: 'pointer', backgroundColor, color:'gold',
-                 textAlign: 'center',minWidth:'14.5%'}}
+                style={{
+                    flex: 1,
+                    padding: '20px 0',
+                    margin: '5px',
+                    border: '1px solid white',
+                    color: 'gold',
+                    cursor: 'pointer',
+                    backgroundColor: backgroundColor || 'inherit',
+                    textAlign: 'center',
+                    minWidth: '14.5%',
+                    fontWeight: 'bold',
+                    fontSize: '18px', // You can adjust the font size as needed
+                    boxSizing: 'border-box', // Ensures padding and border are included in the element's total width and height
+                    overflow: 'hidden', // Ensures content doesn't overflow
+                    whiteSpace: 'nowrap', // Prevents text from wrapping
+                    textOverflow: 'ellipsis' // Adds ellipsis (...) if text overflows
+                  }}
             >
                 ${value.amount}
             </div>
@@ -155,7 +166,7 @@ function Game() {
             <center><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
         <h1 style={{ textAlign: 'center' }}>Play along Jeopardy</h1>
 
-        <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px',flexWrap: 'wrap' }}>
             {players.map(player => <Player key={player.id} player={player} />)}
         </div>
         {moneyValues.map((value, rowIndex) => (
@@ -174,17 +185,20 @@ function Game() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '200px', }}>
-            <center>
-            <div style={{backgroundColor:'navy',border: '5px solid gold' ,width:'75%' }}>
-            <center><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
-            <center></center>
-                <input
+            <center >
+            <div style={{backgroundColor:'#080f44',border: '5px solid gold' ,width:'75%',paddingBottom:'5%' }}>
+            <center ><img src={JEOPPARDLOGO} alt='' style={{height:'200px'}} ></img></center>
+            
+            <h4 style={{color:'white'}}>Add More Players</h4>
+                <div style={{backgroundColor:'navy', borderRadius:'10%',border:'gold 2px solid',width:'75%' }}>
+                <center style={{display:'flex',alignItems: 'center', justifyContent: 'center', marginRight: '10px',padding:'1%',margin:'1%' }}>
+                    <h2
                     type="text"
                     value={playerName}
-                    onChange={e => setPlayerName(e.target.value)}
-                    placeholder="Enter player name"
-                    style={{ marginRight: '10px',padding:'1%',margin:'1%', borderRadius:'10%',border:'gold 2px solid' }}
-                />
+                    // onChange={e => setPlayerName(e.target.value)}
+                    
+                    style={{ marginRight: '10px',padding:'1%',margin:'1%',color:'white' }}
+            >{`Player ${players.length + 1}`}</h2>
                 {/* <br></br> */}
                 <input
                     type="color"
@@ -192,10 +206,23 @@ function Game() {
                     onChange={e => setPlayerColor(e.target.value)}
                     style={{ marginRight: '10px' }}
                 />
+                </center>
                  <br></br>
-                <button style={{ border: '5px solid gold' , borderRadius: '25%', padding: '2%',
-                backgroundColor: 'navy', color: 'gold', textDecoration: 'bold' }}
+                <button style={{
+    backgroundColor: 'gold',
+    color: 'black',
+    padding: '10px 20px',
+    margin: '10px',
+    border: '2px solid gold',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease',
+  }}
         onClick={addPlayer}>Add Player</button>
+        </div>
         </div>
         </center>
             </div>
