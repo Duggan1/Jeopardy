@@ -6,14 +6,16 @@ import mobileImage from './mobile.jpg'; // Replace with the path to your mobile/
 import bgFull from './bg-full.webp';
 
 function HomePage() {
-    return (<>
+    return (<div className='App'>
+
+<center><img src={JEOPPARDLOGO} alt="Jeopardy Logo" style={{ height: '200px', marginBottom: '20px',borderRadius:'40%', }} /></center>
         <div style={{background:`url(${bgFull})`,backgroundSize:'100% 100%'}}>
             <div style={{ textAlign: 'center', padding: '20px'}}>
-            <img src={JEOPPARDLOGO} alt="Jeopardy Logo" style={{ height: '200px', marginBottom: '20px',borderRadius:'40%' }} />
             
-            <div style={{ display: 'flex',flexDirection:'row', justifyContent: 'left', marginTop: '-200px' }}>
-                <div style={{ margin: '10px', textAlign: 'center',backgroundColor: 'rgba(255, 255, 255, 0.6)',padding:'2%',border:'1px solid black',borderRadius:'10%' }}>
-                    <img src={computerImage} alt="Computer" style={{ width: '200px', borderRadius: '10px' }} />
+            
+            <div style={{ display: 'flex',flexDirection:'row', justifyContent: 'left' }}>
+                <div style={{ margin: '10px', textAlign: 'center',backgroundColor: 'rgba(255, 255, 255, 0.6)',padding:'2%',border:'1px solid black',borderRadius:'10%', maxWidth:'30%'  }}>
+                    <img src={computerImage} alt="Computer" style={{ width: '200px', borderRadius: '10px', maxWidth:'90%'  }} />
                     <br />
                     <NavLink
                         exact to="/jeopardy"
@@ -22,7 +24,7 @@ function HomePage() {
                         style={{
                             display: 'inline-block',
                             marginTop: '10px',
-                            padding: '10px 20px',
+                            padding: '10px 0px',
                             backgroundColor: 'navy',
                             color: 'white',
                             borderRadius: '5px',
@@ -37,8 +39,8 @@ function HomePage() {
                         Play on Computer
                     </NavLink>
                 </div>
-                <div style={{ margin: '10px',marginLeft: 'auto', textAlign: 'center',backgroundColor: 'rgba(255, 255, 255, 0.6)',padding:'2%',border:'1px solid black',borderRadius:'10%'  }}>
-                    <img src={mobileImage} alt="Mobile/Tablet" style={{ width: '200px', borderRadius: '10px' }} />
+                <div style={{ margin: '10px',marginLeft: 'auto', textAlign: 'center',backgroundColor: 'rgba(255, 255, 255, 0.6)',padding:'2%',border:'1px solid black',borderRadius:'10%', maxWidth:'30%'  }}>
+                    <img src={mobileImage} alt="Mobile/Tablet" style={{ width: '200px', borderRadius: '10px' , maxWidth:'90%'}} />
                     <br />
                     <NavLink
                         exact to="/mobileJeopardy"
@@ -47,12 +49,12 @@ function HomePage() {
                         style={{
                             display: 'inline-block',
                             marginTop: '10px',
-                            padding: '10px 20px',
+                            padding: '10px 0px',
                             backgroundColor: 'navy',
                             color: 'white',
                             borderRadius: '5px',
                             textDecoration: 'none',
-                            border: '2px solid gold'
+                            border: '2px solid gold',
                         }}
                         activeStyle={{
                             background: "gold",
@@ -67,7 +69,7 @@ function HomePage() {
             </div>
         </div>
         
-        </>
+        </div>
     );
 }
 

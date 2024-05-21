@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #030724;
 }
 
 .App-logo {
@@ -25,7 +26,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #080f44;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +36,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* styles.css */
+.player-text {
+  font-size: 2vw; /* Base size using viewport width */
+}
+
+@media (max-width: 1200px) {
+  .player-text {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .player-text {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-text {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .player-text {
+    font-size: 4vw;
+  }
+@media (max-width: 476px) {
+  .player-text {
+    font-size: 3.2vw;
+  }
+}
+@media (max-width: 376px) {
+  .player-text {
+    font-size: 3vw;
+  }
+}
+
+
+
 }
